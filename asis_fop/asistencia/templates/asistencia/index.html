@@ -1,0 +1,18 @@
+index.html
+
+{{ tipo }}
+{% if tipo == 'colegios' %}
+	{% for col in lista %}
+	    <li><a href="{% url 'asistencia:cursos' col.id %}">{{ col.nombre }}</a></li>
+	{% endfor %}
+{% endif %}
+{% if tipo == 'cursos' %}
+	{% for col in lista %}
+	    <li><a href="{% url 'asistencia:lista' col.id %}">{{ col.nivel }}: {{ col.paralelo }}</a></li>
+	{% endfor %}
+{% endif %}
+{% if tipo == 'alumnos' %}
+	{% for col in lista %}
+	    <li>{{ col.rut }}</li>
+	{% endfor %}
+{% endif %}
