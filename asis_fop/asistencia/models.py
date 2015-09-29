@@ -18,6 +18,11 @@ class ListaCurso(models.Model):
 	alumno = models.ForeignKey(Alumno)
 	curso = models.ForeignKey(Curso)
 
+class Asistencia(models.Model):
+	lista = models.ForeignKey(ListaCurso)
+	fecha = models.DateField()
+	estado = models.CharField(max_length=20)
+
 class Profesor(models.Model):
 	rut = models.CharField(max_length=13)
 	nombres = models.CharField(max_length=100)

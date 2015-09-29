@@ -8,11 +8,11 @@ index.html
 {% endif %}
 {% if tipo == 'cursos' %}
 	{% for col in lista %}
-	    <li><a href="{% url 'asistencia:lista' col.id %}">{{ col.nivel }}: {{ col.paralelo }}</a></li>
+	    <li><a href="{% url 'asistencia:lista' col.id '2015' %}">{{ col.nivel }}: {{ col.paralelo }}</a> </li>
 	{% endfor %}
 {% endif %}
-{% if tipo == 'alumnos' %}
-	{% for col in lista %}
-	    <li>{{ col.rut }}</li>
+{% if tipo == 'alumnos' %}<a href="{% url 'asistencia:pasarlista' curso_id periodo %}">Pasar Lista</a>
+	{% for al in lista %}
+	    <li>{{ al.rut }}</li>
 	{% endfor %}
 {% endif %}
